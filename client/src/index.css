@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-maroon: #321B1D;
+  --color-ivory: #F7F0E4;
+  --color-gold: #C5A15B;
+  --color-saffron: #E87519;
+  --color-charcoal: #1A1815;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #F7F0E4;
+  color: #1A1815;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+h1, h2, h3, .font-serif {
+  font-family: 'Cinzel', 'Playfair Display', Georgia, serif;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F7F0E4;
+}
+::-webkit-scrollbar-thumb {
+  background: #C5A15B;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9E7E36;
+}
+
+/* Utility to hide scrollbar while keeping scroll functionality */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Temple Theme Background Overlay for User Dashboard and Pages */
+.temple-dashboard-bg {
+  position: relative;
+  background-color: #F7F0E4;
+}
+.temple-dashboard-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(#C5A15B 0.75px, transparent 0.75px), radial-gradient(#321B1D 0.75px, #F7F0E4 0.75px);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+/* Glassmorphism spiritual cards */
+.glass-spiritual {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(197, 161, 91, 0.3);
+}
+
+.gold-border {
+  border-color: rgba(197, 161, 91, 0.4);
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #9E7E36 0%, #C5A15B 50%, #7A5E24 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.saffron-gradient {
+  background: linear-gradient(135deg, #E87519 0%, #D4630A 100%);
+}
+
+.maroon-gradient {
+  background: linear-gradient(135deg, #321B1D 0%, #231214 100%);
+}
+
+/* Sacred Motifs Animations */
+@keyframes motif-drift {
+  0% {
+    transform: rotate(0deg) translate(0px, 0px);
+  }
+  50% {
+    transform: rotate(180deg) translate(8px, -12px);
+  }
+  100% {
+    transform: rotate(360deg) translate(0px, 0px);
+  }
+}
+
+@keyframes diya-bob {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes flame-flicker {
+  0%, 100% {
+    opacity: 0.85;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+.ed-motif-drift {
+  animation: motif-drift 32s linear infinite;
+}
+
+.ed-bob {
+  animation: diya-bob 4s ease-in-out infinite;
+}
+
+.ed-flame {
+  animation: flame-flicker 2s ease-in-out infinite;
+  transform-origin: center bottom;
+}
